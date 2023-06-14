@@ -23,10 +23,10 @@
     try {
         //Server settings
         $mail->isSMTP();
-        $mail->Host       = 'mail.rockrealtylimited.com';
+        $mail->Host       = '***';
         $mail->SMTPAuth   = true;
-        $mail->Username   = 'rockrealtymailer@rockrealtylimited.com';
-        $mail->Password   = 'SSqm13nBPvNVO';
+        $mail->Username   = '***';
+        $mail->Password   = '***';
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
         $mail->Port       = 465;
     
