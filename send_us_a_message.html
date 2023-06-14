@@ -79,7 +79,7 @@
                             </div>
                             <h3>Email Address</h3>
                             <P>Business Email<br>
-                                info@rockrealtyng.com</p>
+                                info@rockrealtylimited.com</p>
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -165,21 +165,21 @@
                         <div class="ltn__form-box contact-form-box box-shadow white-bg"
                             style="background-color:  #c7c7c7">
                             <h4 class="title-2">Get in touch</h4>
-                            <form id="contact-form" action="#" method="post">
+                            <form id="contact-form" action="contact.php" method="post">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="input-item input-item-name ltn__custom-icon">
-                                            <input type="text" name="name" placeholder="Enter your name">
+                                            <input type="text" name="name" placeholder="Enter your name" required />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="input-item input-item-email ltn__custom-icon">
-                                            <input type="email" name="email" placeholder="Enter email address">
+                                            <input type="email" name="email" placeholder="Enter email address" required />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="input-item">
-                                            <select class="nice-select">
+                                            <select name="serviceType" class="nice-select" required >
                                                 <option>Select Service Type</option>
                                                 <option>Property Management </option>
                                                 <option>Mortgage Service </option>
@@ -193,18 +193,17 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="input-item input-item-phone ltn__custom-icon">
-                                            <input type="text" name="phone" placeholder="Enter phone number">
+                                            <input type="text" name="phone" placeholder="Enter phone number" />
                                         </div>
                                     </div>
                                 </div>
                                 <div class="input-item input-item-textarea ltn__custom-icon">
-                                    <textarea name="message" placeholder="Enter message"></textarea>
+                                    <textarea name="message" placeholder="Enter message" required ></textarea>
                                 </div>
                                 <div class="btn-wrapper mt-0">
-                                    <button class="btn theme-btn-1 btn-effect-1 text-uppercase"
+                                    <button id="cFormSubmitBtn" class="btn theme-btn-1 btn-effect-1 text-uppercase"
                                         type="submit">Submit</button>
                                 </div>
-                                <p class="form-messege mb-0 mt-20"></p>
                             </form>
                         </div>
                     </div>
@@ -233,6 +232,23 @@
         <!-- FOOTER AREA START -->
         <div w3-include-html="footer.html"></div>
         <!-- FOOTER AREA END -->
+
+        <div class="modal fade" id="send-message-modal" tabindex="-1">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 style="margin: 10px 10px 10px 20px;">Status</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            <!-- <i class="fas fa-times"></i> -->
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                         <h5 id="sendMsgStat"></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- Body main wrapper end -->
 

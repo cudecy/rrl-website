@@ -1957,7 +1957,20 @@
 
 
 
-
+        var pathName = window.location.pathname;
+        if(pathName.includes("send_us_a_message")) {
+            var requestParams = new URLSearchParams(window.location.search);
+            if(requestParams.has("msgSent")) {
+                var messageSent = requestParams.get("msgSent");
+                var displayMsg = messageSent == "Y" ? "Message sent succefully" : "Failed to send message at the moment. Please try again later";
+                $("#sendMsgStat").html(displayMsg);
+                if(messageSent)
+                    $("#send-message-modal").modal("show");
+                else
+                    $("#send-message-modal").modal("show");
+                window.history.replaceState({}, document.title, pathName);
+            }
+        }
     });
 
 
@@ -1987,6 +2000,7 @@
 
     });
 
-
-  
+    $("#contact-form").on("submit", function() {
+        $("#cFormSubmitBtn").attr("disabled", "disabled");
+    });
 })(jQuery);
